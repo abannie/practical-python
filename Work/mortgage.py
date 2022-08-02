@@ -12,12 +12,12 @@ extra_payment = 1000
 
 while principal > 0:
     if payment_num < 12:
-	new_payment = payment + extra_payment
-    	principal = principal * (1+rate/12) - new_payment
-    	total_paid = total_paid + new_payment
-	payment_num += 1
+        new_payment = payment + extra_payment 
+        principal = principal * (1+rate/12) - new_payment 
+        total_paid = total_paid + new_payment 
+        payment_num += 1
     else:
-    	principal = principal * (1+rate/12) - payment
-    	total_paid = total_paid + payment
+        principal = principal * (1+rate/12) - payment
+        total_paid = total_paid + payment
 
 print('Total paid', total_paid)
