@@ -17,9 +17,10 @@ while principal > 0:
         new_payment = payment + extra_payment 
         principal = principal * (1+rate/12) - new_payment 
         total_paid = total_paid + new_payment 
-        payment_month += 1
     else:
         principal = principal * (1+rate/12) - payment
-        total_paid = total_paid + payment
+        total_paid = total_paid + payment 
+    payment_month += 1
+    print(f'{payment_month} {total_paid} {principal}')
 
 print('Total paid', total_paid)
