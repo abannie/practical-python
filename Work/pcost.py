@@ -1,7 +1,10 @@
 # pcost.py
 #
 # Exercise 1.27
-fname = "/home/annie/projects/practical-python/Work/Data/portfolio.csv"
+# pcost.py
+import os
+import sys
+
 def portfolio_cost(fname):
 	with open(fname, 'rt') as f:
 		headers = next(f).split(',')
@@ -17,7 +20,11 @@ def portfolio_cost(fname):
 				print("couldn't parse", row)
 
 		return total
-		#print(f'Total cost {total}')
 
-cost = portfolio_cost(fname)
-print('Total cost:', cost)
+if __name__ == "__main__":
+	if len(sys.argv) == 2:
+		filename = sys.argv[1]
+	else:
+		filename = os.getcwd()+"/Data/portfolio.csv"
+	cost = portfolio_cost(filename)
+	print('Total cost:', cost)
