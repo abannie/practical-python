@@ -16,3 +16,16 @@ def read_portfolio(filename):
             portfolio.append(holding)
     return portfolio
 
+def read_prices(filename):
+    '''read (current) prices of stock'''
+
+    portfolio = {}
+    with open(filename, 'rt') as f:
+        rows = csv.reader(f)
+        for row in rows:
+            print(row)
+            if row:
+                portfolio[row[0]] = float(row[1])
+            else:
+                print("read prices row error", row)
+    return portfolio
